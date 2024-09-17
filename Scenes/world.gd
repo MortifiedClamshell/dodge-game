@@ -25,6 +25,7 @@ func _on_start_timer_timeout():
 func _on_mob_timer_timeout():
 	var mob = mob_scene.instantiate()
 	var mob_spawn_location = $"MobPath/MobSpawnLocation"
+	mob_spawn_location .progress_ratio = randf()
 	var direction = mob_spawn_location.rotation + PI /2
 	mob.position = mob_spawn_location.position
 	direction += randf_range(-PI/4, PI/4)
